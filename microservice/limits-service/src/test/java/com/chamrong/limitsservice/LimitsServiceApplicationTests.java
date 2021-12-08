@@ -1,10 +1,10 @@
-package com.chamrong.restapp.ticketmanagement;
+package com.chamrong.limitsservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TicketManagementApplicationTests {
+class LimitsServiceApplicationTests {
 
   @Test
   void contextLoads() {
