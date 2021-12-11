@@ -1,0 +1,73 @@
+server:
+  port: '8082'
+
+spring:
+  profiles:
+    active: qa
+
+---
+
+spring:
+  profiles: dev
+  devtools:
+    add-properties: 'false'
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/testdb-qa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+sring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to Chamrong Tutorials
+
+---
+
+spring:
+  profiles: qa
+  devtools:
+    add-properties: 'false'
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/testdb-qa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+sring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to Chamrong Tutorials
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+---
+spring:
+  profiles: prod
+  devtools:
+    add-properties: 'false'
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/testdb-prod
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+sring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to Chamrong Tutorials
+
+server:
+  port: '8082'
